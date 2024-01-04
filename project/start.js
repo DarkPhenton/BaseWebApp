@@ -21,9 +21,12 @@ app.get('/projects', function(request, response) {
   response.render('pages/projects');
 });
 
+app.listen("localhost:(3000)");
+
 app.listen(app.get('port'), function() {
   console.log('Node app is running on port', app.get('port'));
 });
+
 
 
 // This file is what handles incoming requests and
