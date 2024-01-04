@@ -1,20 +1,44 @@
 
 body {
+  font-family: Arial, serif;
+  text-align: center;
+  color: #343a40;
+  font-size: 22px;
   background-color: #d0e4fe;
   text-align: center;
 }
 
 h1 {
-  font-family: 'Lobster', cursive;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  margin-top: 40px;
+  font-size: 48px;
   color: orange;
 }
 
 p {
+  margin-top: 80px;
   font-family: "Courier New";
   font-size: 30px;
 }
 
-#doge-image img {
+button{
+  margin-top: 40px;
+}
+
+.page-header{
+  background-color: #00bda5;
+  padding-top: 40px;
+  padding-bottom: 80px;
+  color: #ffffff;
+}
+
+#image img {
+height: 200px;
+margin-top: 60px;
+}
+
+/*#doge-image img {
   height: 140px;
   margin-top: 20px;
-}
+}*/
