@@ -1,3 +1,15 @@
+$(document).ready(function){
+  getWeather();
+}
+
+function getWeather(){
+  var url = "https://api.openweathermap.org/data/2.5/weather?lat={39.324330}&lon={-78.053870}&appid="+apiKey;
+
+  $.ajax(url,{success: function(data){
+    console.log(data);
+  }})
+}
+
 
 function myFunction() {
   // use jQuery ($ is shorthand) to find the div on the page and then change the html
