@@ -1,6 +1,6 @@
-$(document).ready(function){
+$(document).ready(function() {
   getWeather();
-}
+})
 
 function getWeather(){
   var url = "https://api.openweathermap.org/data/2.5/weather?lat={39.324330}&lon={-78.053870}&appid="+apiKey;
