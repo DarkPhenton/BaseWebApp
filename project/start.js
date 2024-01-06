@@ -1,9 +1,9 @@
-var express = require('express');
+import express, { static } from 'express';
 var app = express();
 
 app.set('port', (process.env.PORT || 5000));
 
-app.use(express.static(__dirname));
+app.use(static(__dirname));
 
 // views is directory for all template files
 app.set('views', __dirname + '/html');
@@ -21,7 +21,7 @@ app.get('/projects', function(request, response) {
   response.render('pages/projects');
 });
 
-app.listen("localhost:(3000)");
+//app.listen("localhost:(3000)");
 
 app.listen(app.get('port'), function() {
   console.log('Node app is running on port', app.get('port'));

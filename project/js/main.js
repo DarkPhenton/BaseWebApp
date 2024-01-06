@@ -2,10 +2,10 @@ $(document).ready(function() {
   getWeather();
 })
 
-function getWeather(){
-  var url = "https://api.openweathermap.org/data/2.5/weather?lat={39.324330}&lon={-78.053870}&appid="+apiKey;
+function getWeather() {
+  var url = "https://api.openweathermap.org/data/2.5/weather?lat=39&lon=-78&appid="+ apiKey;
 
-  $.ajax(url,{success: function(data){
+  $.ajax(url,{success: function(data) {
     console.log(data);
   }})
 }
