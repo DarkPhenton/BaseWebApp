@@ -3,7 +3,7 @@ $(document).ready(function() {
 })
 
 function getWeather() {
-  var url = "https://api.openweathermap.org/data/2.5/weather?lat=39&lon=-78&appid="+ apiKey;
+  var url = "https://api.openweathermap.org/data/2.5/weather?lat=39&lon=-78&units=imperial&appid="+ apiKey;
 
   $.ajax(url,{success: function(data) {
     console.log(data);
