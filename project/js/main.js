@@ -1,9 +1,12 @@
-$(document).ready(function() {
+/* $(document).ready(function() {
   getWeather();
-})
+}) */
 
 function getWeather(searchQuery) {
   var url = "https://api.openweathermap.org/data/2.5/weather?q="+searchQuery+/*"lat=39&lon=-78*/"&units=imperial&appid="+ apiKey;
+
+  $(".city").text("");
+  $(".temp").text("");
 
   $.ajax(url,{success: function(data) {
     $(".city").text(data.name);
