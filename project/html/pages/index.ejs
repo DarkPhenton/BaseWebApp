@@ -15,6 +15,49 @@
     <h1>Change to something else</h1>
   </div>
 
+  <script>// Import the functions you need from the SDKs you need
+  import { initializeApp } from "firebase/app";
+  import { getAnalytics } from "firebase/analytics";
+  import { getAuth, onAuthStateChanged } from "firebase/auth";
+  import { getDatabase } from "firebase/database";
+  import { GoogleAuthProvider } from "firebase/auth";
+  import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  //src="https://www.gstatic.com/firebasejs/ui/6.0.1/firebase-ui-auth.js">
+  
+  <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/6.0.1/firebase-ui-auth.css" />
+
+  import firebase from 'firebase/compat/app';
+  import 'firebase/auth'; // This line is important
+
+
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  const firebaseConfig = {
+    authDomain: "message-stream-aadd0.firebaseapp.com",
+    // The value of `databaseURL` depends on the location of the database
+    databaseURL: "https://message-stream-aadd0-default-rtdb.firebaseio.com",
+    projectId: "message-stream-aadd0",
+    storageBucket: "message-stream-aadd0.appspot.com",
+    messagingSenderId: "568130129310",
+    appId: "1:568130129310:web:7eaf7009be51f675ce1a8f",
+    measurementId: "G-5BZ7SF51HV"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+  // Initialize Firebase Authentication and get a reference to the service
+  const auth = getAuth(app);
+  onAuthStateChanged(auth, user => {
+  // Check for user status
+  });
+  // Initialize Realtime Database and get a reference to the service
+  const database = getDatabase(app);
+  export default app;
+</script>
   <button onclick="handleSignIn()">Login</button>
 
   <input class="search" type="text" placeholder="Enter city name">
