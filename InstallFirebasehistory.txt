@@ -1,0 +1,58 @@
+    1  clink autorun --allusers
+    2  clink autorun --help
+    3  clink autorun install
+    4  clink autorun install --allusers
+    5  cd ..
+    6  cd Users\
+    7  cd Usuario\
+    8  git add .
+    9  git commit -m "fbapikey"
+   10  git push origin master
+   11  nvm ls available
+   12  npm update npm -g
+   13  npm version
+   14  nvm version
+   15  brew install nvm
+   16  homebrew version
+   17  command -v brew
+   18  choco install nvm
+   19  nvm ls
+   20  nvm use
+   21  cd Documents\Commercient\
+   22  nvm install 8.9.1
+   23  nvm use 8.9.1
+   24  npm install react-native@^0.0.0-0 || >=0.60 <1.0
+   25  npm install react-native@0.60 <1.0
+   26  npm install --peer react-native@^0.0.0-0
+   27  npm install --peer react-native@^0.0.60
+   28  npm install @react-native-async-storage/async-storage --force
+   29  cd C:\Users\Usuario\Documents\Commercient\
+   30  cd HubSpot\BaseWebApp\
+   31  cd "BaseWebApp
+   32  dir
+   33  npm install @react-native-async-storage/async-storage
+   34  npm install --peer @react-native-async-storage/async-storage@^1.18.1
+   35  npm install --peer react-native@^0.0.0-0 || 0.60 - 0.72 || 1000.0.0
+   36  npm install --peer react-native@^1000.60.72
+   37  npm install --peer "react-native@^0.0.0-0 || 0.60 - 0.72 || 1000.0.0"
+   38  npm install `uglify-js`
+   39  npm install uglify-es -g
+   40  npm install uglify-es
+   41  npm install uglify-js -g
+   42  npm install uglify-js
+   43  npm install @babel/plugin-transform-object-rest-spread
+   44  npm install @babel/plugin-transform-optional-catch-binding
+   45  npm install @babel/plugin-transform-class-properties
+   46  npm install @babel/plugin-transform-nullish-coalescing-operator
+   47  npm install @babel/plugin-transform-numeric-separator
+   48  npm install @babel/plugin-transform-async-generator-functions
+   49  npm install @babel/plugin-transform-optional-chaining
+   50  npm install --peer react@18.2.0
+   51  npm install --peer @babel/preset-env@^7.1.6
+   52  npm install --peer "react@^16.0.0 || ^17.0.0 || ^18.0.0"
+   53  npm install --peer bufferutil@^4.0.1
+   54  npm install --peer utf-8-validate@^5.0.2
+   55  npm install --peer encoding@^0.1.0
+   56  npm install encoding
+   57  npm install firebase
+   58  firebase tools --version
