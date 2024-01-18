@@ -1,8 +1,9 @@
 /* $(document).ready(function() {
   getWeather();
 }) */
-import { GoogleAuthProvider } from "firebase/auth";
-import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
+//import { GoogleAuthProvider } from "firebase/auth";
+//import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
+
 
 function handleSignIn() {
   
