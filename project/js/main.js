@@ -81,7 +81,7 @@ function handleSignIn() {
 
   var provider = new firebaseApp.auth.GoogleAuthProvider();
 
-  firebaseApp.auth().signInWithRedirect(provider).then(function(result) {
+  firebaseApp.auth().signInWithPopup(provider).then(function(result) {
     var token = result.credential.accessToken;
     var user = result.user;
     console.log(user.email);
