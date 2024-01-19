@@ -79,9 +79,9 @@ export default firebaseApp;
 function handleSignIn() {
   
 
-  var provider = new firebaseApp.auth.GoogleAuthProvider();
+  var provider = new firebase.auth.GoogleAuthProvider();
 
-  firebaseApp.auth().signInWithPopup(provider).then(function(result) {
+  firebase.auth().signInWithPopup(provider).then(function(result) {
     var token = result.credential.accessToken;
     var user = result.user;
     console.log(user.email);
