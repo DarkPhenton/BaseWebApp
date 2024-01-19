@@ -3,7 +3,7 @@
 }) */
 //import { GoogleAuthProvider } from "firebase/auth";
 //import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+/*import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-analytics.js";
 import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
 import { getDatabase } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-database.js";
@@ -24,11 +24,11 @@ import { getAuth, signInWithRedirect, GoogleAuthProvider } from "https://www.gst
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 
 // Sign in using a redirect.
-const provider = new GoogleAuthProvider();
+//const provider = new GoogleAuthProvider();
 // Start a sign in process for an unauthenticated user.
-provider.addScope('profile');
-provider.addScope('email');
-await signInWithRedirect(auth, provider);
+//provider.addScope('profile');
+//provider.addScope('email');
+//await signInWithRedirect(auth, provider);
 // This will trigger a full page redirect away from your app
 
 // After returning from the redirect when your app initializes you can obtain the result
@@ -74,17 +74,27 @@ onAuthStateChanged(auth, user => {
 // Initialize Realtime Database and get a reference to the service
 const database = getDatabase(firebaseApp);
 export default firebaseApp;
-
+*/
 
 function handleSignIn() {
   
 
-  const provider = new GoogleAuthProvider();
+  var provider = new firebaseApp.auth.GoogleAuthProvider();
 
-  
+  firebaseApp.auth().signInWithRedirect(provider).then(function(result) {
+    var token = result.credential.accessToken;
+    var user = result.user;
+    console.log(user.email);
+  }).catch(function(error) {
+    var errorCode = error.code;
+    var errorMessage = error.message;
+    var email = error.email;
+    var credential = error.credential;
 
-const auth = getAuth();
-signInWithPopup(auth, provider)
+  });
+
+  /*const auth = getAuth();
+  signInWithPopup(auth, provider)
   .then((result) => {
     // This gives you a Google Access Token. You can use it to access the Google API.
     const credential = GoogleAuthProvider.credentialFromResult(result);
@@ -103,7 +113,7 @@ signInWithPopup(auth, provider)
     // The AuthCredential type that was used.
     const credential = GoogleAuthProvider.credentialFromError(error);
     // ...
-  });
+  });*/
 
 }
 

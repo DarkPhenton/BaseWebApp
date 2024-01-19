@@ -64,16 +64,16 @@ import { getAuth, signInWithRedirect, GoogleAuthProvider } from "https://www.gst
   };
 
   // Initialize Firebase
-  const app = initializeApp(firebaseConfig);
-  const analytics = getAnalytics(app);
+  const firebaseApp= initializeApp(firebaseConfig);
+  const analytics = getAnalytics(firebaseApp);
   // Initialize Firebase Authentication and get a reference to the service
-  const auth = getAuth(app);
+  const auth = getAuth(firebaseApp);
   onAuthStateChanged(auth, user => {
   // Check for user status
   });
   // Initialize Realtime Database and get a reference to the service
-  const database = getDatabase(app);
-  export default app;
+  const database = getDatabase(firebaseApp);
+  export default firebaseApp;
 </script>
 
 <!-- then our app's own js file -->
