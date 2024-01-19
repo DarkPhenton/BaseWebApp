@@ -1,7 +1,8 @@
 var express = require('express');
 var app = express();
 
-var firebase = require('firebase');
+//var firebase = require('firebase');
+//var firebaseApp = firebase();
 
 app.set('port', (process.env.PORT || 5000));
 
