@@ -4,7 +4,7 @@ var app = express();
 //var firebase = require('firebase');
 //var firebaseApp = firebase();
 
-app.set('port', (process.env.PORT || 5000));
+//app.set('port', (process.env.PORT || 5000));
 
 app.use(express.static(__dirname));
 

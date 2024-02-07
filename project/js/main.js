@@ -1,14 +1,52 @@
-/* $(document).ready(function() {
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-analytics.js";
+//import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+import { getDatabase } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-database.js";
+import { getAuth, signInWithPopup, GoogleAuthProvider } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+
+function handleSignIn() {
+  
+  var provider = new GoogleAuthProvider();
+
+  firebase.auth().signInWithPopup(provider).then(function(result) {
+    /** @type {firebase.auth.OAuthCredential} */
+    var credential = result.credential;
+
+    // This gives you a Google Access Token. You can use it to access the Google API.
+    var token = credential.accessToken;
+    // The signed-in user info.
+    var user = result.user;
+    // IdP data available in result.additionalUserInfo.profile.
+      // ...
+  }).catch((error) => {
+    // Handle Errors here.
+    var errorCode = error.code;
+    var errorMessage = error.message;
+    // The email of the user's account used.
+    var email = error.email;
+    // The firebase.auth.AuthCredential type that was used.
+    var credential = error.credential;
+    // ...
+  });
+}
+// provider.addScope('profile');
+// provider.addScope('email');
+// await signInWithPopup(auth, provider);
+
+// const result = await (auth);
+// if (result) {
+//   // This is the signed-in user
+//   const user = result.user;
+//   // This gives you a Google Access Token.
+//   const credential = GoogleAuthProvider.credentialFromResult(result);
+//   const token = credential.accessToken;
+// }
+  /* $(document).ready(function() {
   getWeather();
 }) */
 //import { GoogleAuthProvider } from "firebase/auth";
 //import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
-/*import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
-import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-analytics.js";
-import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
-import { getDatabase } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-database.js";
-import { GoogleAuthProvider } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
-import { getAuth, signInWithRedirect, GoogleAuthProvider } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -32,14 +70,14 @@ import { getAuth, signInWithRedirect, GoogleAuthProvider } from "https://www.gst
 // This will trigger a full page redirect away from your app
 
 // After returning from the redirect when your app initializes you can obtain the result
-const result = await getRedirectResult(auth);
-if (result) {
-  // This is the signed-in user
-  const user = result.user;
-  // This gives you a Google Access Token.
-  const credential = GoogleAuthProvider.credentialFromResult(result);
-  const token = credential.accessToken;
-}
+// const result = await getRedirectResult(auth);
+// if (result) {
+//   // This is the signed-in user
+//   const user = result.user;
+//   // This gives you a Google Access Token.
+//   const credential = GoogleAuthProvider.credentialFromResult(result);
+//   const token = credential.accessToken;
+// }
 
 
 const firebaseConfig = {
@@ -74,24 +112,8 @@ onAuthStateChanged(auth, user => {
 // Initialize Realtime Database and get a reference to the service
 const database = getDatabase(firebaseApp);
 export default firebaseApp;
-*/
 
-function handleSignIn() {
-  
 
-  var provider = new firebase.auth.GoogleAuthProvider();
-
-  firebase.auth().signInWithPopup(provider).then(function(result) {
-    var token = result.credential.accessToken;
-    var user = result.user;
-    console.log(user.email);
-  }).catch(function(error) {
-    var errorCode = error.code;
-    var errorMessage = error.message;
-    var email = error.email;
-    var credential = error.credential;
-
-  });
 
   /*const auth = getAuth();
   signInWithPopup(auth, provider)
@@ -115,7 +137,7 @@ function handleSignIn() {
     // ...
   });*/
 
-}
+
 
 function getWeather(searchQuery) {
   var url = "https://api.openweathermap.org/data/2.5/weather?q="+searchQuery+/*"lat=39&lon=-78*/"&units=imperial&appid="+ apiKey;
